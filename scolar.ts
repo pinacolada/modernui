@@ -350,6 +350,9 @@ class PlageHoraire {
     }
 }
 
+
+// Étapes de la création d'une année :
+
 let trim1 = new Date(2019, 8, 2),
     trim2 = new Date(2019, 10, 25),//25 novembre -> 6 décembre (semaine des conseils)
     trim3 = new Date(2020, 2, 16),// 16 mars -> 27 mars (semaine des conseils 2ème trim)
@@ -357,6 +360,8 @@ let trim1 = new Date(2019, 8, 2),
 
 let annee = new AnneeScolaire(2019, trim1, trim2, trim3, finAnnee);
 let p = new Planning(annee);
+
+// Enlever des jours du planning
 
 p.chomer("Toussaint", 1, 11, 2019);
 p.chomer("Armistice 1918", 11, 11, 2019);
@@ -370,12 +375,19 @@ p.chomer("Ascension", 21, 5, 2020);
 p.chomer("Pont de l'Ascension", 22, 5, 2020);
 p.chomer("Pentecôte", 31, 5, 2020);
 p.chomer("Lundi de Pentecôte", 1, 6, 2020);
+
+// Enlever les quinzaines de vacances 
+
 p.vacances("Vacances de la Toussaint", 19, 10, 2019, 3, 11, 2019);
 p.vacances("Vacances de Noël", 21, 12, 2019, 5, 1, 2020);
 p.vacances("Vacances d'hiver", 8, 2, 2020, 23, 2, 2020);
 p.vacances("Vacances de printemps", 4, 4, 2020, 19, 4, 2020);
 
+// Enlever les weekends
+
 p.creerFinSemaines();
+
+// Définir l'emploi du temps
 
 p.planifier(1, 3, "3ème 2", false, false, "", "C102");
 p.planifier(1, 6, "4ème 2", false, false, "", "C102");
@@ -400,6 +412,9 @@ p.planifier(5, 3, "4ème 2", false, false, "", "C102");
 p.planifier(5, 4, "4ème 2", false, false, "", "C102");
 p.planifier(5, 6, "3ème 2", false, false, "", "C102");
 p.planifier(5, 7, "5ème 2", false, false, "", "C102");
+
+// Voir (log) les jours créés et éliminés. 
+// Toutes les heures de cours des jours ouvrés sont créées.
 
 annee.jours.forEach(j => {
     console.log(j.info);
