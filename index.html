@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ModernUi DataEd @HSH2019</title>
+    <script src="persist.js"></script>
+    <script src="modernui.js"></script>
+    <script src="scolar.js"></script>
+
+    <style>
+        ui-el, ui-ed, ui-btn, ui-opt, ui-itm, ui-bol, ui-gr, ui-cpt {
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            padding-left: 3px;
+            user-select:none;
+            -webkit-user-select: none; 
+        }
+        .lbl {
+            text-align : right;
+            padding-right: 5px;
+            border-bottom-left-radius:14px;
+        }
+        ui-gr {
+            padding: 0px;
+        }
+        ui-itm {
+            user-select:none;
+            -webkit-user-select: none;
+            cursor: pointer;
+        }
+        ui-el {
+            cursor: pointer;
+        }
+        ui-ed {
+            cursor:text;
+        }
+        ui-btn {
+            text-align : center;
+            cursor:pointer;
+            user-select:none;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body style="background-color:#999999">
+
+    <script>
+        var couls="red;green;blue;black;white;grey;magenta;cyan;yellow;brown;purple;orange";
+        function newBase()  { console.log("Créer une nouvelle base");   } 
+        function delBase()  { console.log("Détruire la base en cours"); } 
+        function newTable() { console.log("Créer une nouvelle table");  } 
+        function delTable() { console.log("Effacer la table en cours"); }  
+        function newField() { console.log("Créer un nouveau champ");    } 
+        function delField() { console.log("Effacer le champ en cours"); }
+        function newRow()   { console.log("Nouvelle ligne");            } 
+        function delRow()   { console.log("Effacer la ligne");          }
+        
+    </script>
+
+    <ui-ed id="formTitle" lbl="Formulaire" rec="160;130;140;26" title="titre du formulaire">DBCreation</ui-ed>
+    <ui-ed id="formInfo" lbl="Description" rec="470;130;300;26" title="description du formulaire">Création d'une base et de tables</ui-ed>
+    
+    <ui-ed id="baseName" lbl="Base de données" rec="160;160;140;26" title="nm de la base de données">maDataBase</ui-ed>
+    <ui-ed id="baseInfo" lbl="Description" rec="470;160;300;26" title="description de la base de données">Base de données de test</ui-ed>
+    
+    <ui-ed id="tableName" lbl="Table" rec="160;190;140;26" title="nom de la table">maDataTable</ui-ed>
+    <ui-ed id="tableInfo" lbl="Description" rec="470;190;300;26" title="description de la table">Table de la base de test</ui-ed>
+    
+    <ui-ed id="fieldName" lbl="Champ" rec="160;220;140;26" title="nom du champ">monChamp</ui-ed>
+    
+    <ui-opt id="fieldType" lbl="Type" rec="470;220;150;26" opt="txt;bool;int;num;date;buffer" title="type de champ">txt</ui-opt>
+
+    <ui-ed id="fieldInfo" lbl="Description" rec="470;250;300;26" title="description du champ">Description du champ</ui-ed>
+
+    <ui-btn cmd="newBase" rec="10;30;188;28" lbl="Nouvelle base"></ui-btn>
+    <ui-btn cmd="delBase" rec="10;60;188;28" lbl="Détruire la base"></ui-btn>
+    
+    <ui-btn cmd="newTable" rec="200;30;188;28" lbl="Nouvelle table"></ui-btn>
+    <ui-btn cmd="delTable" rec="200;60;188;28" lbl="Supprimer la table"></ui-btn>
+    
+    <ui-btn cmd="newField" rec="390;30;188;28" lbl="Nouveau champ"></ui-btn>  
+    <ui-btn cmd="delField" rec="390;60;188;28" lbl="Supprimer le champ"></ui-btn>
+    
+    <ui-btn cmd="newRow" rec="580;30;188;28" lbl="Nouvelle ligne"></ui-btn>  
+    <ui-btn cmd="delRow" rec="580;60;188;28" lbl="Supprimer la ligne"></ui-btn>
+
+    <ui-bol id="record" rec="470;280;50;25" checked="true" lbl="Enregistré ?"></ui-bol>
+    <ui-cpt id="lg" rec="160;320;140;25" min="0" max="640" val="320" lbl="Largeur" precis="0"></ui-cpt>
+    <ui-cpt id="ht" rec="160;350;140;25" min="0" max="480" val="240" lbl="Hauteur" precis="0"></ui-cpt>
+    <ui-cpt id="ba" rec="160;380;140;25" min="-1" max="1" val="0" lbl="Balance" precis="1"></ui-cpt>
+    <ui-cpt id="vo" rec="160;410;140;25" min="0" max="1" val="0.5" lbl="Volume" precis="2"></ui-cpt>
+
+</body>
+</html>
